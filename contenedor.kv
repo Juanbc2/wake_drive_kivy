@@ -1,0 +1,50 @@
+<IoT>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            canvas:
+                Color:
+                    rgba: [0, 0, 0, 1] if str(root.emergency) == '0' else [1,0,0,1]
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            orientation: 'horizontal'
+            Image:
+                source: 'resources/monitoring.jpg' if str(root.emergency) == '0' else 'resources/emergency.png'
+            Label:
+                text: 'Sistema de emergencia'
+                font_size: 40
+                bold: True
+                rgba: [1, 1, 1, 0.5] if str(root.emergency) == '0' else [0,0,0,1]
+
+        BoxLayout:
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 0.5
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            orientation: 'vertical'
+            Label:
+                text: 'Enviando datos..'
+                font_size: 20
+                bold: True
+            BoxLayout:
+                orientation: 'horizontal'
+                Label:
+                    text: 'Pulso Cardiaco'
+                    font_size: 20
+                Label:
+                    text: str(root.pulse)
+                    font_size: 20
+            BoxLayout:
+                orientation: 'horizontal'
+                Label:
+                    text: 'Sensor de choque'
+                    font_size: 20
+                Label:
+                    text: str(root.shock)
+                    font_size: 20
+
+
+
