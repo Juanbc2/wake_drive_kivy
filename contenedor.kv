@@ -11,6 +11,9 @@
             orientation: 'horizontal'
             Image:
                 source: 'resources/monitoring.png' if str(root.emergency) == '0' else 'resources/emergency.png'
+                size: self.parent.width, self.parent.height
+                allow_stretch: True
+
             Label:
                 text: 'Sistema de emergencia'
                 font_size: 40
