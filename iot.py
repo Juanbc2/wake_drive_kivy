@@ -10,8 +10,9 @@ class IoT(Screen):
     shock = NumericProperty(0)
     emergency = NumericProperty(0)
 
-    def __init__(self, **kw):
-        super().__init__(**kw)
+    def __init__(self, **kwargs):
+        self.path = kwargs.pop('path', "")
+        super(IoT, self).__init__(**kwargs)
         escuchador = Listener(self)
         try:
             start_new_thread(escuchador.start, ())

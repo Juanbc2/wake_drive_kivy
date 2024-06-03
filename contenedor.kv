@@ -10,7 +10,7 @@
                     pos: self.pos
             orientation: 'horizontal'
             Image:
-                source: 'resources/monitoring.jpg' if str(root.emergency) == '0' else 'resources/emergency.png'
+                source: root.path + '/resources/monitoring.jpg' if str(root.emergency) == '0' else root.path + '/resources/emergency.png'
             Label:
                 text: 'Sistema de emergencia'
                 font_size: 40
